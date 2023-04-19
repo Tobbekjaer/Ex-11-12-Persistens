@@ -15,15 +15,17 @@ namespace Persistens
 
             // Initiate a new DataHandler object
             DataHandler handler = new DataHandler("Data.txt");
-            // Runs the SavePersons() method in the DataHandler class with the person object above
-            handler.SavePersons(persons);
-            // Writing LoadPersons() to the console
-            Console.WriteLine(handler.LoadPersons().ToString());
+            // Runs the SavePerson() method in the DataHandler class with the person object above
+            handler.SavePerson(person);
+            // Writing LoadPerson() to the console (1 person)
+            Person newPerson = handler.LoadPerson();
+            Console.WriteLine(newPerson.MakeTitle());
 
+            // Writing the persons array to the console (3 persons)
             for (int i = 0; i < persons.Length; i++) {
-                Console.WriteLine(persons[i]);
-            }
-
+                Person printPerson = persons[i];
+                Console.WriteLine(printPerson.MakeTitle());
+        }
 
             Console.ReadLine(); 
 
